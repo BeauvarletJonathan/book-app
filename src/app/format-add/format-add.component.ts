@@ -34,10 +34,13 @@ export class FormatAddComponent implements OnInit {
   get width() { 
     return this.createForm.get('width')
   }
+  get landscape() { 
+    return this.createForm.get('landscape')
+  }
 
   create(){
-    const Format: Format = this.createForm.value;
-    this.fs.create(Format).subscribe(
+    const format: Format = this.createForm.value;
+    this.fs.create(format).subscribe(
       response => console.log(response)
     );
   }

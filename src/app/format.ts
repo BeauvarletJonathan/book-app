@@ -4,4 +4,5 @@ export interface Format {
     height: number;
     width: number;
     landscape: boolean;
+    books: any[];
 }

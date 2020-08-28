@@ -2,67 +2,26 @@
     id: {{format.id}}
 
     name: 
-    <!-- si on est en mode d'edition on affiche le formulaire -->
-    <div *ngIf="editMode">
-        <form [formGroup]="formEdit" (ngSubmit)="edit()">
-            <input type="text" formControlName="name">
-           
-            <button type="submit">ok</button>
-        </form>
-    </div>
-    <!-- sinon on affiche les données normalement -->
-    <span *ngIf="!editMode">
-        {{format.name}}
-    </span>
-
-    <button (click)="toggleEdit()">edit</button>
-
     height: 
-    <!-- si on est en mode d'edition on affiche le formulaire -->
-    <div *ngIf="editMode">
-        <form [formGroup]="formEdit" (ngSubmit)="edit()">
-            <input type="text" formControlName="height">
-
-            <button type="submit">ok</button>
-        </form>
-    </div>
-    <!-- sinon on affiche les données normalement -->
-    <span *ngIf="!editMode">
-        {{format.height}}
-    </span>
-
-    <button (click)="toggleEdit()">edit</button>
-
     width: 
-    <!-- si on est en mode d'edition on affiche le formulaire -->
-    <div *ngIf="editMode">
-        <form [formGroup]="formEdit" (ngSubmit)="edit()">
-            <input type="text" formControlName="width">
-
-            <button type="submit">ok</button>
-        </form>
-    </div>
-    <!-- sinon on affiche les données normalement -->
-    <span *ngIf="!editMode">
-        {{format.width}}
-    </span>
-
-    <button (click)="toggleEdit()">edit</button>
-
     landscape: 
     <!-- si on est en mode d'edition on affiche le formulaire -->
     <div *ngIf="editMode">
         <form [formGroup]="formEdit" (ngSubmit)="edit()">
+            <input type="text" formControlName="name">
+            <input type="text" formControlName="height">
+            <input type="text" formControlName="width">
             <input type="checkbox" formControlName="landscape">
 
             <button type="submit">ok</button>
         </form>
     </div>
     <!-- sinon on affiche les données normalement -->
-    <span *ngIf="!editMode">
-        {{format.name}} <!-- TODO voir comment changé en portrait ou paysage en fonction du boleean-->
-    </span>
-
-    <button (click)="toggleEdit()">edit</button>
-
+        <span *ngIf="!editMode">
+            {{format.name}}
+            {{format.height}}
+            {{format.width}}
+            {{format.landscape}}
+        </span>
+        <button (click)="toggleEdit()">edit</button>
 </div>
